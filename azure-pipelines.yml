@@ -14,6 +14,9 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
+    mvn sonar:sonar \
+      -Dsonar.host.url=https://sonarqube.avans-informatica-breda.nl \
+      -Dsonar.login=f45ae584101ae866fc4cc511b13586be092dc484
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
