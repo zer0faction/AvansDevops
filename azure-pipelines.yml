@@ -1,4 +1,5 @@
 # Maven
+
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -15,8 +16,8 @@ steps:
   inputs:
     SonarQube: 'SonarQubeAvansDevops'
     scannerMode: 'MSBuild'
-    projectKey: 'a11-eindopdracht-avansdevops'
-    projectName: 'a11-eindopdracht-avansdevops'
+    projectKey: 'a9-eindopdracht-avansdevops'
+    projectName: 'a9-eindopdracht-avansdevops'
 
 - task: Maven@3
   inputs:
@@ -27,7 +28,7 @@ steps:
     jdkArchitectureOption: 'x64'
     sonarQubeRunAnalysis: true
     publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-.xml'
+    testResultsFiles: '*/surefire-reports/TEST-.xml'
     goals: 'package'
 - task: SonarQubePublish@4
   inputs:
