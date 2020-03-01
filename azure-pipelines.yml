@@ -17,17 +17,19 @@ steps:
       scannerMode: 'MSBuild'
       projectKey: 'a11-eindopdracht-avansdevops'
       projectName: 'a11-eindopdracht-avansdevops'
+
   - task: Maven@3
     inputs:
-      mavenPomFile: 'pom.xml'
-      mavenOptions: '-Xmx3072m'
-      javaHomeOption: 'JDKVersion'
-      jdkVersionOption: '1.8'
-      jdkArchitectureOption: 'x64'
-      sonarQubeRunAnalysis: true
-      publishJUnitResults: true
-      testResultsFiles: '*/surefire-reports/TEST-.xml'
-      goals: 'package'
+        mavenPomFile: 'pom.xml'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        codeCoverageToolOption: 'JaCoCo'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: true
+        sqMavenPluginVersionChoice: 'latest'
   - task: SonarQubePublish@4
     inputs:
       pollingTimeoutSec: '300'
