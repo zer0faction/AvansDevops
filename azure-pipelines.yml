@@ -15,8 +15,8 @@ steps:
     inputs:
       SonarQube: 'SonarQubeAvansDevops'
       scannerMode: 'MSBuild'
-      projectKey: 'zerofaction'
-      projectName: 'AvansDevopsErin'
+      projectKey: 'a11-eindopdracht-avansdevops'
+      projectName: 'a11-eindopdracht-avansdevops'
   - task: Maven@3
     inputs:
       mavenPomFile: 'pom.xml'
