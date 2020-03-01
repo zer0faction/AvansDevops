@@ -21,8 +21,11 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    publishJUnitResults: false
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    testRunTitle: 'Tests Avans Devops'
     codeCoverageToolOption: 'JaCoCo'
+    codeCoverageFailIfEmpty: true
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
