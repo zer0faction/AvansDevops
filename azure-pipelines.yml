@@ -5,31 +5,31 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-  - master
+- master
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - task: SonarQubePrepare@4
-    inputs:
-      SonarQube: 'SonarQubeAvansDevops'
-      scannerMode: 'MSBuild'
-      projectKey: 'a11-eindopdracht-avansdevops'
-      projectName: 'a11-eindopdracht-avansdevops'
+- task: SonarQubePrepare@4
 
-  - task: Maven@3
-    inputs:
-        mavenPomFile: 'pom.xml'
-        publishJUnitResults: true
-        testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        codeCoverageToolOption: 'JaCoCo'
-        javaHomeOption: 'JDKVersion'
-        mavenVersionOption: 'Default'
-        mavenAuthenticateFeed: false
-        effectivePomSkip: false
-        sonarQubeRunAnalysis: true
-        sqMavenPluginVersionChoice: 'latest'
-  - task: SonarQubePublish@4
-    inputs:
-      pollingTimeoutSec: '300'
+  inputs:
+    SonarQube: 'SonarQubeAvansDevops'
+    scannerMode: 'MSBuild'
+    projectKey: 'a11-eindopdracht-avansdevops'
+    projectName: 'a11-eindopdracht-avansdevops'
+
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    sonarQubeRunAnalysis: true
+    publishJUnitResults: true
+    testResultsFiles: '*/surefire-reports/TEST-.xml'
+    goals: 'package'
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '300'
