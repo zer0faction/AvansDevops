@@ -28,7 +28,7 @@ steps:
     jdkArchitectureOption: 'x64'
     sonarQubeRunAnalysis: true
     publishJUnitResults: true
-    testResultsFiles: '*/surefire-reports/TEST-.xml'
+    testResultsFiles: '**/surefire-reports/TEST-.xml'
     goals: 'package'
 - task: SonarQubePublish@4
   inputs:
