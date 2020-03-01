@@ -14,8 +14,9 @@ steps:
   - task: SonarQubePrepare@4
     inputs:
       SonarQube: 'SonarQubeAvansDevops'
-      scannerMode: 'other'
-      
+      scannerMode: 'MSBuild'
+      projectKey: 'zerofaction'
+      projectName: 'AvansDevopsErin'
   - task: Maven@3
     inputs:
       mavenPomFile: 'pom.xml'
@@ -30,4 +31,3 @@ steps:
   - task: SonarQubePublish@4
     inputs:
       pollingTimeoutSec: '300'
-
