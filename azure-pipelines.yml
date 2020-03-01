@@ -21,6 +21,7 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
+    mavenOptions: 'Xmx3072m'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     codeCoverageToolOption: 'JaCoCo'
@@ -30,6 +31,11 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'latest'
+    goals: 'package'
+    
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '300'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
