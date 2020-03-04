@@ -16,8 +16,8 @@ steps:
   inputs:
     SonarQube: 'SonarQubeAvansDevops'
     scannerMode: 'MSBuild'
-    projectKey: 'a9-eindopdracht-avansdevops'
-    projectName: 'a9-eindopdracht-avansdevops'
+    projectKey: 'a11-eindopdracht-avansdevops'
+    projectName: 'a11-eindopdracht-avansdevops'
 
 - task: Maven@3
   inputs:
