@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class BacklogItem {
     private String name;
-    private String description;
+    private String description; //1
 
     private BacklogItemState backlogItemState;
     private ArrayList<BacklogTask> backlogTasks;
