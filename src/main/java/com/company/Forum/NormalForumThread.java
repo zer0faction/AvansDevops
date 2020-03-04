@@ -38,4 +38,14 @@ public class NormalForumThread implements ForumThread {
     public String GetName() {
         return name;
     }
+
+    @Override
+    public void AddBacklogItem(BacklogItem b) {
+        System.out.println("No need to add a backlogitem to this thread");
+    }
+
+    @Override
+    public ArrayList<Comment> GetAllComments() {
+        return comments;
+    }
 }

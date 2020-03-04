@@ -16,4 +16,9 @@ public class PdfGenerator extends ReportGenerator {
     public void SetReportFooter() {
         System.out.println("Set footer for PDF doc");
     }
+
+    @Override
+    public String ReturnDocument(){
+        return "PDF";
+    }
 }

@@ -11,7 +11,7 @@ public class ForumThreadAttachedToBacklogItem implements ForumThread {
     private ArrayList<Comment> comments;
     private BacklogItem backlogItemAttachedToThisThread;
 
-    public ForumThreadAttachedToBacklogItem(String name, String description) {
+    public ForumThreadAttachedToBacklogItem(String name, String description, BacklogItem backlogItemAttachedToThisThread) {
         this.name = name;
         this.description = description;
         this.backlogItemAttachedToThisThread = backlogItemAttachedToThisThread;
@@ -40,7 +40,17 @@ public class ForumThreadAttachedToBacklogItem implements ForumThread {
     }
 
     @Override
+    public ArrayList<Comment> GetAllComments(){
+        return comments;
+    }
+
+    @Override
     public String GetName() {
         return name;
+    }
+
+    @Override
+    public void AddBacklogItem(BacklogItem b) {
+        backlogItemAttachedToThisThread = b;
     }
 }

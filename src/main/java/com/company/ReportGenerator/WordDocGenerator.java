@@ -15,4 +15,9 @@ public class WordDocGenerator extends ReportGenerator{
     public void SetReportFooter() {
         System.out.println("Set footer for WORD doc");
     }
+
+    @Override
+    public String ReturnDocument(){
+        return "WORD";
+    }
 }

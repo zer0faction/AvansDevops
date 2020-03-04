@@ -64,4 +64,8 @@ public class Sprint {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
+    public String getName() {
+        return name;
+    }
 }

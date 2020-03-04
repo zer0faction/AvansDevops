@@ -24,6 +24,7 @@ public class PlanningState extends SprintState {
         context.setName(name);
         context.setStartDate(startDate);
         context.setEndDate(endDate);
+        System.out.println(context.getName()+ " NAAM");
     }
 
     @Override

@@ -12,13 +12,14 @@ public abstract class ReportGenerator {
     public void SetReportHeader(){}
     public void SetReportFooter(){}
 
-    public void GenerateReport(Sprint sprint, ArrayList<User> users){
+    public String GenerateReport(Sprint sprint, ArrayList<User> users){
         SetReportText("");
         SetReportColors();
         SetReportHeader();
         SetReportFooter();
         SaveReportToDatabase();
         SendReportToUsers(users);
+        return ReturnDocument();
     }
 
     public void SetReportText(String text){
@@ -35,5 +36,9 @@ public abstract class ReportGenerator {
              ) {
             m.Subscribe(u);
         }
+    }
+
+    public String ReturnDocument(){
+        return "ERROR";
     }
 }
